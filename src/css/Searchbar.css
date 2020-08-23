@@ -1,0 +1,10 @@
+.container .form {
+  margin-top: 50px;
+}
+
+.container .form input {
+  background-color: white;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
