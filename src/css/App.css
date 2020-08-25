@@ -1,0 +1,9 @@
+body {
+  background-color: #369457;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(3, minmax(100px, auto));
+}

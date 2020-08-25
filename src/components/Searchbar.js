@@ -1,21 +1,22 @@
-import React from 'react';
-import '../css/Searchbar.css'
+import React from "react";
+import "../css/Searchbar.css";
 
 const Searchbar = () => {
-    return (
-        <div className="container">
-          <div className="col s12 l5">
-            <form  className="form ">
-              <div className="row">
-                <div className="input-field  col s3 l4">
-                    <input type="text" placeholder="Say my name" className=" left-align validate"/>       
-                </div>  
-              </div>           
-            </form>
+  return (
+    <div className="searchbar">
+      <form className="form">
+        <div className="row">
+          <div className="input-field">
+            <input
+              type="text"
+              placeholder="  Say my name"
+              className="validate"
+            />
           </div>
         </div>
-    )
-}
+      </form>
+    </div>
+  );
+};
 
-
-export default Searchbar; 
+export default Searchbar;
