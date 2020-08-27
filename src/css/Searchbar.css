@@ -7,3 +7,15 @@
   border-radius: 15px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
+
+@media screen and (max-width: 760px) {
+  .searchbar {
+    grid-column: 3 / 7;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .searchbar {
+    grid-column: 2 / 8;
+  }
+}

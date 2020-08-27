@@ -2,3 +2,17 @@
   grid-row: 3 / 4;
   grid-column: 4 / 6;
 }
+
+@media screen and (max-width: 760px) {
+  .card-styles {
+    grid-row: 3 / 4;
+    grid-column: 3 / 7;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-styles {
+    grid-row: 3 / 4;
+    grid-column: 2 / 8;
+  }
+}

@@ -7,3 +7,19 @@ body {
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(4, minmax(100px, auto));
 }
+
+@media screen and (max-width: 760px) {
+  .App {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, minmax(100px, auto));
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .App {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, minmax(100px, auto));
+  }
+}
