@@ -22,3 +22,8 @@ button:hover {
 .card-img {
   padding-top: 40px;
 }
+
+.quote-wrapper {
+  grid-row: 4 / 4;
+  grid-column: 4 / 6;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/Card.css";
 
-const Card = ({ character }) => {
+const Card = ({ character, getQuote }) => {
   return (
     <div className="card-wrapper">
       <div className="card">
@@ -23,7 +23,7 @@ const Card = ({ character }) => {
             Portrayed by: {character.portrayed}
           </h5>
           <div className="center">
-            <button>Get Quote</button>
+            <button onClick={() => getQuote(character.name)}>Get Quote</button>
           </div>
         </div>
       </div>

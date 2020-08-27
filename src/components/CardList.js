@@ -2,10 +2,16 @@ import React from "react";
 import Card from "./Card";
 import "../css/CardList.css";
 
-const CardList = ({ characters }) => {
+const CardList = ({ characters, getQuote }) => {
   const charList = characters.length ? (
     characters.map((character) => {
-      return <Card character={character} key={character.char_id} />;
+      return (
+        <Card
+          character={character}
+          key={character.char_id}
+          getQuote={getQuote}
+        />
+      );
     })
   ) : (
     <div className="col s12 l6">
