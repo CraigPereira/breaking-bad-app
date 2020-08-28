@@ -8,7 +8,7 @@ import Quote from "./components/Quote";
 
 class App extends Component {
   state = {
-    characters: [],
+    characters: null,
     search: "",
     quote: null,
   };
@@ -18,23 +18,42 @@ class App extends Component {
       search: name,
     });
   };
+  onlyAlphabets = () => {
+    const pattern = /^[A-Za-z]+$/;
+    return pattern.test(this.state.search);
+  };
   handleSumbit = (e) => {
     e.preventDefault();
     e.target.reset();
-    const path = "https://www.breakingbadapi.com/api/characters?name=";
-    const name = this.state.search;
-    axios.get(`${path + name}`).then((res) => {
-      this.setState({
-        characters: res.data,
+    if (this.onlyAlphabets()) {
+      const path = "https://www.breakingbadapi.com/api/characters?name=";
+      const name = this.state.search;
+      axios.get(`${path + name}`).then((res) => {
+        const characters = res.data.length
+          ? res.data
+          : "404 - Character Not Found";
+        this.setState({
+          characters,
+          quote: null,
+        });
       });
-    });
+    } else {
+      this.setState({
+        characters: "Invalid Input",
+        quote: null,
+      });
+    }
   };
   getQuote = (name) => {
     const path = "https://www.breakingbadapi.com/api/quote/random?author=";
     axios.get(`${path + name}`).then((res) => {
+      const quote = res.data.length
+        ? res.data[0].quote
+        : "No quote avaliable for this character";
       this.setState({
-        quote: res.data[0].quote,
+        quote,
       });
+      window.scrollTo(0, document.body.scrollHeight);
     });
   };
   render() {
@@ -47,7 +66,12 @@ class App extends Component {
           handleSumbit={this.handleSumbit}
         />
         {this.state.quote && <Quote quote={this.state.quote} />}
-        <CardList characters={this.state.characters} getQuote={this.getQuote} />
+        {this.state.characters && (
+          <CardList
+            characters={this.state.characters}
+            getQuote={this.getQuote}
+          />
+        )}
       </div>
     );
   }

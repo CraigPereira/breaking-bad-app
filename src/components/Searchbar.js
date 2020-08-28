@@ -12,6 +12,7 @@ const Searchbar = ({ characters, setSearchField, handleSumbit }) => {
               placeholder="  Say my name"
               className="validate"
               onChange={setSearchField}
+              required
             />
           </div>
         </div>
